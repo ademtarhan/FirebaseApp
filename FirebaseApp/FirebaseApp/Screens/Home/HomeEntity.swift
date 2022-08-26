@@ -27,16 +27,15 @@ enum HomeError: Error {
 }
 
 struct DataModel {
-    var postText = ""
-    var uID = ""
-    var postID = ""
-    var imageURL = "https://firebasestorage.googleapis.com/v0/b/deleteuserdatafirebase.appspot.com/o/image.jpeg?alt=media&token=ec43daae-df3e-404a-a2d8-89248d1e9fab"
-    
+    var postText : String
+    var uID : String
+    var postID: String
+    var imageURL: URL
     var asJson: [String: Any] {
         return ["postText":postText, "userID":uID,"postID":postID,"imageURL":imageURL]
     }
     
-    init(postText: String,uID: String,postID: String,imageURL: String){
+    init(postText: String,uID: String,postID: String,imageURL: URL){
         self.postText = postText
         self.uID = uID
         self.postID = postID
@@ -47,7 +46,7 @@ struct DataModel {
         self.postText = snapShot["postText"] as! String
         self.uID = snapShot["userID"] as! String
         self.postID = snapShot["postID"] as! String
-        self.imageURL = snapShot["imageURL"] as! String
+        self.imageURL = snapShot["imageURL"] as! URL
     }
 }
 

@@ -33,9 +33,9 @@ class HomeViewControllerImpl: UIViewController, HomeViewController {
     }
 
     @objc func goToAdd() {
-        // let AddVC = AddViewControllerImpl(nibName: "AddViewController", bundle: nil)
+         let AddVC = AddViewControllerImpl(nibName: "AddViewController", bundle: nil)
 
-        // navigationController?.pushViewController(AddVC, animated: true)
+         navigationController?.pushViewController(AddVC, animated: true)
     }
 
     // ..MARK: append data and reload table view
@@ -55,36 +55,8 @@ class HomeViewControllerImpl: UIViewController, HomeViewController {
 }
 
 extension HomeViewControllerImpl {
-    func showAddItemAlert() {
-        var postText: String = ""
-        let alert = UIAlertController(title: "Share Post", message: "", preferredStyle: UIAlertController.Style.alert)
-
-        alert.addAction(UIAlertAction(title: "Add Image", style: UIAlertAction.Style.default, handler: { _ in
-            alert.dismiss(animated: true)
-        }))
-
-        alert.addTextField { field in
-            field.placeholder = "Post Text"
-            postText = field.text ?? ""
-        }
-        alert.addAction(UIAlertAction(title: "Share", style: UIAlertAction.Style.default, handler: { _ in
-            self.presenter?.saveItem(text: postText)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { [self] _ in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-
-    func showtimer() {
-        let alert = UIAlertController(title: "timer finished", message: "timer finished", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-
-    func showAlert(title: String, message: String) {
+    
+   func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
             alert.dismiss(animated: true, completion: nil)

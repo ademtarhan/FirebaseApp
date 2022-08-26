@@ -12,7 +12,6 @@ protocol HomePresenter: AnyObject {
     var view: HomeViewController? { get set }
     func getData()
     func deleteData(data: DataModel, postID: String)
-    func saveItem(text: String?)
 }
 
 class HomePresenterImpl: HomePresenter {
@@ -20,22 +19,6 @@ class HomePresenterImpl: HomePresenter {
 
     var view: HomeViewController?
 
-    // MARK: - item text control
-
-    func saveItem(text: String?) {
-        if text == "" {
-            print("text is empty")
-        } else {
-            interactor?.saveItem(text: text!, completion: { result in
-                switch result {
-                case let .success(post):
-                    self.view?.appendData(data: post)
-                case let .failure(error):
-                    print(error)
-                }
-            })
-        }
-    }
 
     // ..MARK: get data
     func getData() {

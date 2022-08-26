@@ -20,6 +20,13 @@
 		9A3422BB28B75359000ADA9F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3422B928B75359000ADA9F /* TableViewCell.swift */; };
 		9A3422BC28B75359000ADA9F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3422BA28B75359000ADA9F /* TableViewCell.xib */; };
 		9A3422BE28B755B3000ADA9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3422BD28B755B2000ADA9F /* GoogleService-Info.plist */; };
+		9A3422C428B76227000ADA9F /* AddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3422C328B76227000ADA9F /* AddInteractor.swift */; };
+		9A3422C628B76241000ADA9F /* AddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3422C528B76241000ADA9F /* AddPresenter.swift */; };
+		9A3422C828B7624D000ADA9F /* AddEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3422C728B7624D000ADA9F /* AddEntity.swift */; };
+		9A3422CA28B7625D000ADA9F /* AddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3422C928B7625D000ADA9F /* AddRouter.swift */; };
+		9A3422CD28B762C1000ADA9F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3422CB28B762C1000ADA9F /* AddViewController.swift */; };
+		9A3422CE28B762C1000ADA9F /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3422CC28B762C1000ADA9F /* AddViewController.xib */; };
+		9A3422D028B762F9000ADA9F /* AddService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3422CF28B762F9000ADA9F /* AddService.swift */; };
 		CD386C169D0BC5A423B339CF /* Pods_FirebaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18313CA6F723ABD9C7E2A9B4 /* Pods_FirebaseApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +49,13 @@
 		9A3422B928B75359000ADA9F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		9A3422BA28B75359000ADA9F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		9A3422BD28B755B2000ADA9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A3422C328B76227000ADA9F /* AddInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddInteractor.swift; path = ../../../../../AddInteractor.swift; sourceTree = "<group>"; };
+		9A3422C528B76241000ADA9F /* AddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresenter.swift; sourceTree = "<group>"; };
+		9A3422C728B7624D000ADA9F /* AddEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntity.swift; sourceTree = "<group>"; };
+		9A3422C928B7625D000ADA9F /* AddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouter.swift; sourceTree = "<group>"; };
+		9A3422CB28B762C1000ADA9F /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		9A3422CC28B762C1000ADA9F /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		9A3422CF28B762F9000ADA9F /* AddService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +146,13 @@
 		9A3422A328B74F94000ADA9F /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				9A3422C328B76227000ADA9F /* AddInteractor.swift */,
+				9A3422C528B76241000ADA9F /* AddPresenter.swift */,
+				9A3422C728B7624D000ADA9F /* AddEntity.swift */,
+				9A3422C928B7625D000ADA9F /* AddRouter.swift */,
+				9A3422CB28B762C1000ADA9F /* AddViewController.swift */,
+				9A3422CC28B762C1000ADA9F /* AddViewController.xib */,
+				9A3422CF28B762F9000ADA9F /* AddService.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -212,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3422CE28B762C1000ADA9F /* AddViewController.xib in Resources */,
 				9A34229828B74D5B000ADA9F /* LaunchScreen.storyboard in Resources */,
 				9A3422BC28B75359000ADA9F /* TableViewCell.xib in Resources */,
 				9A3422BE28B755B3000ADA9F /* GoogleService-Info.plist in Resources */,
@@ -269,14 +291,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3422C828B7624D000ADA9F /* AddEntity.swift in Sources */,
 				9A3422B228B75049000ADA9F /* HomeService.swift in Sources */,
 				9A3422BB28B75359000ADA9F /* TableViewCell.swift in Sources */,
 				9A3422AA28B74FD0000ADA9F /* HomeInteractor.swift in Sources */,
 				9A3422B028B74FED000ADA9F /* HomeEntity.swift in Sources */,
 				9A34228C28B74D57000ADA9F /* AppDelegate.swift in Sources */,
+				9A3422C428B76227000ADA9F /* AddInteractor.swift in Sources */,
 				9A3422A728B74FC0000ADA9F /* HomeViewController.swift in Sources */,
+				9A3422C628B76241000ADA9F /* AddPresenter.swift in Sources */,
+				9A3422D028B762F9000ADA9F /* AddService.swift in Sources */,
 				9A3422AC28B74FDA000ADA9F /* HomePresenter.swift in Sources */,
 				9A3422AE28B74FE4000ADA9F /* HomeRouter.swift in Sources */,
+				9A3422CD28B762C1000ADA9F /* AddViewController.swift in Sources */,
+				9A3422CA28B7625D000ADA9F /* AddRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
