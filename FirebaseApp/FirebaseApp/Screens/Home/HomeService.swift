@@ -17,11 +17,9 @@ protocol HomeService {
     var userid: String! { get }
     var postid: String! { get }
     func getUser(completion: @escaping (Result<FirebaseAuth.User?, FirebaseError>) -> Void)
-    func createAccount(withEmail email: String, password: String, data: [String: String], _ completion: @escaping (Result<Bool, FirebaseError>) -> Void)
     func getData(completion: @escaping (Result<DataModel, FirebaseError>) -> Void)
     func deleteData(with data: DataModel, postID: String, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
     
-    func logIn(with email: String, password: String, completion: @escaping (Bool) -> Void)
 
 }
 
@@ -29,18 +27,7 @@ class HomeServiceImpl: HomeService {
     let databaseRef = Database.database().reference()
 
    
-  
-    func logIn(with email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { _, error in
-            if let error = error {
-                print("SigIn Error: \(error.localizedDescription)")
-                completion(false)
-            } else {
-                print("Log In Success")
-                completion(true)
-            }
-        }
-    }
+
 
     var userid: String! {
         Auth.auth().currentUser?.uid ?? ""

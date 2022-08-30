@@ -18,24 +18,31 @@ class HomeViewControllerImpl: UIViewController, HomeViewController {
     var datas = [DataModel]()
     @IBOutlet var tableView: UITableView!
 
+    @IBOutlet var shareButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.title = "DEMO"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(goToAdd))
-
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(goToAdd))
+//
         let nibCell = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: "cell")
-
+        setButton(button: shareButton)
         presenter?.getData()
     }
 
-    @objc func goToAdd() {
-         let AddVC = AddViewControllerImpl(nibName: "AddViewController", bundle: nil)
+//    @objc func goToAdd() {
+//        let AddVC = AddViewControllerImpl(nibName: "AddViewController", bundle: nil)
+//
+//        navigationController?.pushViewController(AddVC, animated: true)
+//    }
 
-         navigationController?.pushViewController(AddVC, animated: true)
+    @IBAction func didTapShare(_ sender: Any) {
+        let AddVC = AddViewControllerImpl(nibName: "AddViewController", bundle: nil)
+
+        navigationController?.pushViewController(AddVC, animated: true)
     }
 
     // ..MARK: append data and reload table view
@@ -55,8 +62,7 @@ class HomeViewControllerImpl: UIViewController, HomeViewController {
 }
 
 extension HomeViewControllerImpl {
-    
-   func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
             alert.dismiss(animated: true, completion: nil)
@@ -94,8 +100,8 @@ extension HomeViewControllerImpl: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
 
         let item = datas[indexPath.row]
-        print(item)
-        cell.setdata(data: item)
+
+        cell.setData(data: item)
 
         return cell
     }
@@ -114,5 +120,11 @@ extension HomeViewControllerImpl {
         if let _ = info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage {
             let _ = "Images/photo.jpg"
         }
+    }
+
+    func setButton(button: UIButton) {
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor(named: "tintColor")?.cgColor
     }
 }

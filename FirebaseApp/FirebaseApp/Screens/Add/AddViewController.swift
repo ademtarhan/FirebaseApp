@@ -14,7 +14,7 @@ protocol AddViewController: AnyObject {
 }
 
 class AddViewControllerImpl: UIViewController, AddViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet var imagePost: UIImageView!
+    @IBOutlet var image: UIImageView!
     @IBOutlet var textPost: UITextView!
     let imagePicker = UIImagePickerController()
     var presenter: AddPresenter?
@@ -22,19 +22,20 @@ class AddViewControllerImpl: UIViewController, AddViewController, UIImagePickerC
         super.viewDidLoad()
 
         navigationItem.title = "Share Post"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Image", style: .plain, target: self, action: #selector(addImage))
         imagePicker.delegate = self
         presenter = AddPresenterImpl(view: self)
     }
 
-    @objc func addImage() {
-        showChooeseImageType()
-    }
-
     @IBAction func buttonSharePost(_ sender: Any) {
-        presenter?.savePost(postText: textPost.text, postImage: imagePost)
+        presenter?.savePost(postText: textPost.text, postImage: image)
      //   presenter?.saveData(postImage: imagePost, postText: textPost.text)
     }
+    
+    
+    @IBAction func didTapAddImage(_ sender: Any) {
+        showChooeseImageType()
+    }
+    
 
     func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) // ..MARK: changed
@@ -56,7 +57,7 @@ class AddViewControllerImpl: UIViewController, AddViewController, UIImagePickerC
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        imagePost.image = info[.originalImage] as? UIImage
+        image.image = info[.originalImage] as? UIImage
         dismiss(animated: true)
     }
 }

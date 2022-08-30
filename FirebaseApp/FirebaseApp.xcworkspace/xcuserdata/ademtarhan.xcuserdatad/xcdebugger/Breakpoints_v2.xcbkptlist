@@ -7,49 +7,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0176C73A-4FD3-4D38-947B-453A60060B88"
+            uuid = "ED01D13E-DAB4-4161-AF7E-851489061E45"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FirebaseApp/Screens/Add/AddService.swift"
+            filePath = "FirebaseApp/Screens/LogIn/LogInViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "saveImage(postText:postImage:completion:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "didTapCreate(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CC84CCBF-29B4-4E91-8695-289BCBC01ACA"
+            uuid = "F79FC1A1-78BB-4640-A180-8B1B9307992E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FirebaseApp/Screens/Add/AddService.swift"
+            filePath = "FirebaseApp/Screens/LogIn/LogInPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "saveImage(postText:postImage:completion:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "createAccount(withEmail:password:data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A7C77532-F234-4BB8-8ADA-2F97797DD016"
+            uuid = "3EC00EE7-C457-4F82-B115-9514A94C8AEC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FirebaseApp/Screens/Add/AddService.swift"
+            filePath = "FirebaseApp/Screens/LogIn/LogInInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "downUrl(postID:completion:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "createAccount(withEmail:password:data:_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7AC5EE6A-97A2-426F-B52A-C1F255773B72"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseApp/Screens/LogIn/LogInViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D51DF356-C0A2-4D70-BBD4-64BC42511866"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseApp/Screens/LogIn/LogInRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "login"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

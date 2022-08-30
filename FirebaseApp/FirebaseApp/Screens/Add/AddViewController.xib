@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewControllerImpl" customModule="FirebaseApp" customModuleProvider="target">
             <connections>
-                <outlet property="imagePost" destination="oaS-Sa-dOO" id="nzr-xE-yL7"/>
+                <outlet property="image" destination="oaS-Sa-dOO" id="Dlk-5D-YK5"/>
                 <outlet property="textPost" destination="B8Y-3h-9Tp" id="PDb-mN-nfs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.rectangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oaS-Sa-dOO">
-                    <rect key="frame" x="20" y="65" width="374" height="371.5"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oaS-Sa-dOO">
+                    <rect key="frame" x="20" y="64" width="374" height="374"/>
                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="374" id="0hg-ec-GbS"/>
@@ -70,6 +71,16 @@
                         <action selector="buttonSharePost:" destination="-1" eventType="touchUpInside" id="2YZ-f9-XdK"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBw-zp-nvE">
+                    <rect key="frame" x="20" y="64" width="374" height="374"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="didTapAddImage:" destination="-1" eventType="touchUpInside" id="Ik1-zr-Bwg"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,17 +88,21 @@
                 <constraint firstItem="oaS-Sa-dOO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="1I6-32-ZLE"/>
                 <constraint firstItem="oaS-Sa-dOO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7X6-Mk-AHR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oaS-Sa-dOO" secondAttribute="trailing" constant="20" id="8Pb-ju-2w5"/>
+                <constraint firstItem="B8Y-3h-9Tp" firstAttribute="top" secondItem="zBw-zp-nvE" secondAttribute="bottom" constant="20" id="B4v-Bw-2MJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zBw-zp-nvE" secondAttribute="trailing" constant="20" id="Exn-ZF-nqC"/>
+                <constraint firstItem="zBw-zp-nvE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LSm-gc-uvT"/>
                 <constraint firstItem="B8Y-3h-9Tp" firstAttribute="top" secondItem="oaS-Sa-dOO" secondAttribute="bottom" constant="20" id="MIO-wV-X4D"/>
                 <constraint firstItem="1hH-p9-ZnU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bUd-u5-yUV"/>
+                <constraint firstItem="zBw-zp-nvE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="dMa-7g-oim"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B8Y-3h-9Tp" secondAttribute="trailing" constant="20" id="lTe-tc-aCF"/>
                 <constraint firstItem="B8Y-3h-9Tp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="n3u-X4-mIE"/>
                 <constraint firstItem="1hH-p9-ZnU" firstAttribute="top" secondItem="B8Y-3h-9Tp" secondAttribute="bottom" constant="40" id="oTc-da-nHh"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="84"/>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </view>
     </objects>
     <resources>
-        <image name="person.crop.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

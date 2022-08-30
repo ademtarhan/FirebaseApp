@@ -30,12 +30,12 @@ struct DataModel {
     var postText : String
     var uID : String
     var postID: String
-    var imageURL: URL
+    var imageURL: String
     var asJson: [String: Any] {
         return ["postText":postText, "userID":uID,"postID":postID,"imageURL":imageURL]
     }
     
-    init(postText: String,uID: String,postID: String,imageURL: URL){
+    init(postText: String,uID: String,postID: String,imageURL: String){
         self.postText = postText
         self.uID = uID
         self.postID = postID
@@ -46,7 +46,7 @@ struct DataModel {
         self.postText = snapShot["postText"] as! String
         self.uID = snapShot["userID"] as! String
         self.postID = snapShot["postID"] as! String
-        self.imageURL = snapShot["imageURL"] as! URL
+        self.imageURL = snapShot["imageURL"] as! String
     }
 }
 
@@ -85,4 +85,5 @@ enum FirebaseError: Error {
     case networkError
     case deleteStorageDataError
     case wrongEntries
+    case updateError
 }

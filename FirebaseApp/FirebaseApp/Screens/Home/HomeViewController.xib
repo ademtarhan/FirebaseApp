@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewControllerImpl" customModule="FirebaseApp" customModuleProvider="target">
             <connections>
+                <outlet property="shareButton" destination="59v-lH-E6D" id="gX3-fw-cdb"/>
                 <outlet property="tableView" destination="Il3-NQ-V0Z" id="DWG-Og-af7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,18 +20,65 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Il3-NQ-V0Z">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfB-Po-bTe">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Il3-NQ-V0Z">
+                            <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                            <color key="backgroundColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59v-lH-E6D">
+                            <rect key="frame" x="324" y="776" width="70" height="60"/>
+                            <color key="backgroundColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="HqC-Uy-sJ8"/>
+                                <constraint firstAttribute="height" constant="60" id="PwT-w9-4w9"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Share">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="19" name="HoeflerText-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
+                                    <real key="value" value="0.69999999999999996"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapShare:" destination="-1" eventType="touchUpInside" id="ZZ4-Yc-AWf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="59v-lH-E6D" secondAttribute="bottom" constant="60" id="FtN-uP-QXx"/>
+                        <constraint firstAttribute="bottom" secondItem="Il3-NQ-V0Z" secondAttribute="bottom" constant="39" id="SzW-N1-bcz"/>
+                        <constraint firstItem="Il3-NQ-V0Z" firstAttribute="leading" secondItem="CfB-Po-bTe" secondAttribute="leading" id="W7I-ig-vul"/>
+                        <constraint firstItem="Il3-NQ-V0Z" firstAttribute="top" secondItem="CfB-Po-bTe" secondAttribute="top" constant="39" id="cuE-IY-je8"/>
+                        <constraint firstAttribute="trailing" secondItem="Il3-NQ-V0Z" secondAttribute="trailing" id="jfe-ad-fc5"/>
+                        <constraint firstAttribute="trailing" secondItem="59v-lH-E6D" secondAttribute="trailing" constant="20" id="y1J-eG-9Em"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Il3-NQ-V0Z" secondAttribute="bottom" id="IjE-uI-feo"/>
-                <constraint firstItem="Il3-NQ-V0Z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Pg7-uo-qzK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Il3-NQ-V0Z" secondAttribute="trailing" id="iLk-Qn-2Pu"/>
-                <constraint firstItem="Il3-NQ-V0Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qWO-im-mqz"/>
+                <constraint firstItem="CfB-Po-bTe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Grm-Xa-g23"/>
+                <constraint firstItem="CfB-Po-bTe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HKu-uD-XxH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CfB-Po-bTe" secondAttribute="trailing" id="Iy7-Fa-ltj"/>
+                <constraint firstAttribute="bottom" secondItem="CfB-Po-bTe" secondAttribute="bottom" id="lk4-LF-xY6"/>
             </constraints>
             <point key="canvasLocation" x="139" y="104"/>
         </view>
